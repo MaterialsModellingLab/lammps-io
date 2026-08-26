@@ -1,0 +1,23 @@
+LAMMPS data file via minimal example
+# Some line comment
+2 atoms # some comment
+1 atom types
+
+-10.0 10.0 xlo xhi
+-20.0 20.0 ylo yhi
+-30.0 30.0 zlo zhi
+
+Masses
+
+1 1.0
+2 2.0
+
+Atoms # atomic
+
+1 1 1.0 2.0 3.0 1 0 -1
+2 2 4.0 5.0 6.0 0 0 0
+
+Velocities
+
+1 0.1 0.0 0.0
+2 -0.1 0.0 0.0

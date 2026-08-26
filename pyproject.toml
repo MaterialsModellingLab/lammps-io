@@ -1,0 +1,35 @@
+[build-system]
+requires = ["maturin>=1.9,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "lammps_io"
+description = "Python interface for reading and writing LAMMPS data and dump files"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+]
+dynamic = ["version"]
+dependencies = ["numpy>=1.22"]
+
+[project.optional-dependencies]
+test = ["pytest", "pytest-cov"]
+benchmark = ["ase", "kaleido", "pandas", "plotly", "pytest-benchmark"]
+
+[tool.maturin]
+python-source = "python"
+features = ["pyo3/extension-module"]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+xfail_strict = true
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py310"
+
+[tool.ruff.lint]
+extend-select = ["B", "I", "PGH", "RUF", "UP"]
